@@ -1,0 +1,481 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "GMX" "1" "February 03, 2016" "5.1.2" "GROMACS"
+.SH NAME
+gmx \- molecular dynamics simulation suite
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+gmx [\fB\-[no]h\fP] [\fB\-[no]quiet\fP] [\fB\-[no]version\fP] [\fB\-[no]copyright\fP] [\fB\-nice\fP \fI<int>\fP]
+    [\fB\-[no]backup\fP]
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+GROMACS is a full\-featured suite of programs to perform molecular
+dynamics simulations, i.e., to simulate the behavior of systems with
+hundreds to millions of particles using Newtonian equations of motion.
+It is primarily used for research on proteins, lipids, and polymers, but
+can be applied to a wide variety of chemical and biological research
+questions.
+.SH OPTIONS
+.sp
+Other options:
+.INDENT 0.0
+.TP
+.B \fB\-[no]h\fP  (no)
+Print help and quit
+.TP
+.B \fB\-[no]quiet\fP  (no)
+Do not print common startup info or quotes
+.TP
+.B \fB\-[no]version\fP  (no)
+Print extended version information and quit
+.TP
+.B \fB\-[no]copyright\fP  (yes)
+Print copyright information on startup
+.TP
+.B \fB\-nice\fP <int> (19)
+Set the nicelevel (default depends on command)
+.TP
+.B \fB\-[no]backup\fP  (yes)
+Write backups if output files exist
+.UNINDENT
+.SH GMX COMMANDS
+.sp
+The following commands are available. Please refer to their individual man pages or \fBgmx help <command>\fP for further details.
+.SS Trajectory analysis
+.INDENT 0.0
+.TP
+.B \fIgmx\-gangle(1)\fP
+Calculate angles
+.TP
+.B \fIgmx\-distance(1)\fP
+Calculate distances between pairs of positions
+.TP
+.B \fIgmx\-freevolume(1)\fP
+Calculate free volume
+.TP
+.B \fIgmx\-pairdist(1)\fP
+Calculate pairwise distances between groups of positions
+.TP
+.B \fIgmx\-rdf(1)\fP
+Calculate radial distribution functions
+.TP
+.B \fIgmx\-sasa(1)\fP
+Compute solvent accessible surface area
+.TP
+.B \fIgmx\-select(1)\fP
+Print general information about selections
+.UNINDENT
+.SS Generating topologies and coordinates
+.INDENT 0.0
+.TP
+.B \fIgmx\-editconf(1)\fP
+Edit the box and write subgroups
+.TP
+.B \fIgmx\-x2top(1)\fP
+Generate a primitive topology from coordinates
+.TP
+.B \fIgmx\-solvate(1)\fP
+Solvate a system
+.TP
+.B \fIgmx\-insert\-molecules(1)\fP
+Insert molecules into existing vacancies
+.TP
+.B \fIgmx\-genconf(1)\fP
+Multiply a conformation in \(aqrandom\(aq orientations
+.TP
+.B \fIgmx\-genion(1)\fP
+Generate monoatomic ions on energetically favorable positions
+.TP
+.B \fIgmx\-genrestr(1)\fP
+Generate position restraints or distance restraints for index groups
+.TP
+.B \fIgmx\-pdb2gmx(1)\fP
+Convert coordinate files to topology and FF\-compliant coordinate files
+.UNINDENT
+.SS Running a simulation
+.INDENT 0.0
+.TP
+.B \fIgmx\-grompp(1)\fP
+Make a run input file
+.TP
+.B \fIgmx\-mdrun(1)\fP
+Perform a simulation, do a normal mode analysis or an energy minimization
+.TP
+.B \fIgmx\-convert\-tpr(1)\fP
+Make a modifed run\-input file
+.UNINDENT
+.SS Viewing trajectories
+.INDENT 0.0
+.TP
+.B \fIgmx\-nmtraj(1)\fP
+Generate a virtual oscillating trajectory from an eigenvector
+.TP
+.B \fIgmx\-view(1)\fP
+View a trajectory on an X\-Windows terminal
+.UNINDENT
+.SS Processing energies
+.INDENT 0.0
+.TP
+.B \fIgmx\-enemat(1)\fP
+Extract an energy matrix from an energy file
+.TP
+.B \fIgmx\-energy(1)\fP
+Writes energies to xvg files and display averages
+.TP
+.B \fIgmx\-mdrun(1)\fP
+(Re)calculate energies for trajectory frames with \-rerun
+.UNINDENT
+.SS Converting files
+.INDENT 0.0
+.TP
+.B \fIgmx\-editconf(1)\fP
+Convert and manipulates structure files
+.TP
+.B \fIgmx\-eneconv(1)\fP
+Convert energy files
+.TP
+.B \fIgmx\-sigeps(1)\fP
+Convert c6/12 or c6/cn combinations to and from sigma/epsilon
+.TP
+.B \fIgmx\-trjcat(1)\fP
+Concatenate trajectory files
+.TP
+.B \fIgmx\-trjconv(1)\fP
+Convert and manipulates trajectory files
+.TP
+.B \fIgmx\-xpm2ps(1)\fP
+Convert XPM (XPixelMap) matrices to postscript or XPM
+.UNINDENT
+.SS Tools
+.INDENT 0.0
+.TP
+.B \fIgmx\-analyze(1)\fP
+Analyze data sets
+.TP
+.B \fIgmx\-dyndom(1)\fP
+Interpolate and extrapolate structure rotations
+.TP
+.B \fIgmx\-filter(1)\fP
+Frequency filter trajectories, useful for making smooth movies
+.TP
+.B \fIgmx\-lie(1)\fP
+Estimate free energy from linear combinations
+.TP
+.B \fIgmx\-morph(1)\fP
+Interpolate linearly between conformations
+.TP
+.B \fIgmx\-pme_error(1)\fP
+Estimate the error of using PME with a given input file
+.TP
+.B \fIgmx\-sham(1)\fP
+Compute free energies or other histograms from histograms
+.TP
+.B \fIgmx\-spatial(1)\fP
+Calculate the spatial distribution function
+.TP
+.B \fIgmx\-traj(1)\fP
+Plot x, v, f, box, temperature and rotational energy from trajectories
+.TP
+.B \fIgmx\-tune_pme(1)\fP
+Time mdrun as a function of PME ranks to optimize settings
+.TP
+.B \fIgmx\-wham(1)\fP
+Perform weighted histogram analysis after umbrella sampling
+.TP
+.B \fIgmx\-check(1)\fP
+Check and compare files
+.TP
+.B \fIgmx\-dump(1)\fP
+Make binary files human readable
+.TP
+.B \fIgmx\-make_ndx(1)\fP
+Make index files
+.TP
+.B \fIgmx\-mk_angndx(1)\fP
+Generate index files for \(aqgmx angle\(aq
+.TP
+.B \fIgmx\-trjorder(1)\fP
+Order molecules according to their distance to a group
+.TP
+.B \fIgmx\-xpm2ps(1)\fP
+Convert XPM (XPixelMap) matrices to postscript or XPM
+.UNINDENT
+.SS Distances between structures
+.INDENT 0.0
+.TP
+.B \fIgmx\-cluster(1)\fP
+Cluster structures
+.TP
+.B \fIgmx\-confrms(1)\fP
+Fit two structures and calculates the RMSD
+.TP
+.B \fIgmx\-rms(1)\fP
+Calculate RMSDs with a reference structure and RMSD matrices
+.TP
+.B \fIgmx\-rmsf(1)\fP
+Calculate atomic fluctuations
+.UNINDENT
+.SS Distances in structures over time
+.INDENT 0.0
+.TP
+.B \fIgmx\-mindist(1)\fP
+Calculate the minimum distance between two groups
+.TP
+.B \fIgmx\-mdmat(1)\fP
+Calculate residue contact maps
+.TP
+.B \fIgmx\-polystat(1)\fP
+Calculate static properties of polymers
+.TP
+.B \fIgmx\-rmsdist(1)\fP
+Calculate atom pair distances averaged with power \-2, \-3 or \-6
+.UNINDENT
+.SS Mass distribution properties over time
+.INDENT 0.0
+.TP
+.B \fIgmx\-gyrate(1)\fP
+Calculate the radius of gyration
+.TP
+.B \fIgmx\-msd(1)\fP
+Calculates mean square displacements
+.TP
+.B \fIgmx\-polystat(1)\fP
+Calculate static properties of polymers
+.TP
+.B \fIgmx\-rdf(1)\fP
+Calculate radial distribution functions
+.TP
+.B \fIgmx\-rotacf(1)\fP
+Calculate the rotational correlation function for molecules
+.TP
+.B \fIgmx\-rotmat(1)\fP
+Plot the rotation matrix for fitting to a reference structure
+.TP
+.B \fIgmx\-sans(1)\fP
+Compute small angle neutron scattering spectra
+.TP
+.B \fIgmx\-saxs(1)\fP
+Compute small angle X\-ray scattering spectra
+.TP
+.B \fIgmx\-traj(1)\fP
+Plot x, v, f, box, temperature and rotational energy from trajectories
+.TP
+.B \fIgmx\-vanhove(1)\fP
+Compute Van Hove displacement and correlation functions
+.UNINDENT
+.SS Analyzing bonded interactions
+.INDENT 0.0
+.TP
+.B \fIgmx\-angle(1)\fP
+Calculate distributions and correlations for angles and dihedrals
+.TP
+.B \fIgmx\-mk_angndx(1)\fP
+Generate index files for \(aqgmx angle\(aq
+.UNINDENT
+.SS Structural properties
+.INDENT 0.0
+.TP
+.B \fIgmx\-anadock(1)\fP
+Cluster structures from Autodock runs
+.TP
+.B \fIgmx\-bundle(1)\fP
+Analyze bundles of axes, e.g., helices
+.TP
+.B \fIgmx\-clustsize(1)\fP
+Calculate size distributions of atomic clusters
+.TP
+.B \fIgmx\-disre(1)\fP
+Analyze distance restraints
+.TP
+.B \fIgmx\-hbond(1)\fP
+Compute and analyze hydrogen bonds
+.TP
+.B \fIgmx\-order(1)\fP
+Compute the order parameter per atom for carbon tails
+.TP
+.B \fIgmx\-principal(1)\fP
+Calculate principal axes of inertia for a group of atoms
+.TP
+.B \fIgmx\-rdf(1)\fP
+Calculate radial distribution functions
+.TP
+.B \fIgmx\-saltbr(1)\fP
+Compute salt bridges
+.TP
+.B \fIgmx\-sorient(1)\fP
+Analyze solvent orientation around solutes
+.TP
+.B \fIgmx\-spol(1)\fP
+Analyze solvent dipole orientation and polarization around solutes
+.UNINDENT
+.SS Kinetic properties
+.INDENT 0.0
+.TP
+.B \fIgmx\-bar(1)\fP
+Calculate free energy difference estimates through Bennett\(aqs acceptance ratio
+.TP
+.B \fIgmx\-current(1)\fP
+Calculate dielectric constants and current autocorrelation function
+.TP
+.B \fIgmx\-dos(1)\fP
+Analyze density of states and properties based on that
+.TP
+.B \fIgmx\-dyecoupl(1)\fP
+Extract dye dynamics from trajectories
+.TP
+.B \fIgmx\-principal(1)\fP
+Calculate principal axes of inertia for a group of atoms
+.TP
+.B \fIgmx\-tcaf(1)\fP
+Calculate viscosities of liquids
+.TP
+.B \fIgmx\-traj(1)\fP
+Plot x, v, f, box, temperature and rotational energy from trajectories
+.TP
+.B \fIgmx\-vanhove(1)\fP
+Compute Van Hove displacement and correlation functions
+.TP
+.B \fIgmx\-velacc(1)\fP
+Calculate velocity autocorrelation functions
+.UNINDENT
+.SS Electrostatic properties
+.INDENT 0.0
+.TP
+.B \fIgmx\-current(1)\fP
+Calculate dielectric constants and current autocorrelation function
+.TP
+.B \fIgmx\-dielectric(1)\fP
+Calculate frequency dependent dielectric constants
+.TP
+.B \fIgmx\-dipoles(1)\fP
+Compute the total dipole plus fluctuations
+.TP
+.B \fIgmx\-potential(1)\fP
+Calculate the electrostatic potential across the box
+.TP
+.B \fIgmx\-spol(1)\fP
+Analyze solvent dipole orientation and polarization around solutes
+.TP
+.B \fIgmx\-genion(1)\fP
+Generate monoatomic ions on energetically favorable positions
+.UNINDENT
+.SS Protein\-specific analysis
+.INDENT 0.0
+.TP
+.B \fIgmx\-do_dssp(1)\fP
+Assign secondary structure and calculate solvent accessible surface area
+.TP
+.B \fIgmx\-chi(1)\fP
+Calculate everything you want to know about chi and other dihedrals
+.TP
+.B \fIgmx\-helix(1)\fP
+Calculate basic properties of alpha helices
+.TP
+.B \fIgmx\-helixorient(1)\fP
+Calculate local pitch/bending/rotation/orientation inside helices
+.TP
+.B \fIgmx\-rama(1)\fP
+Compute Ramachandran plots
+.TP
+.B \fIgmx\-wheel(1)\fP
+Plot helical wheels
+.UNINDENT
+.SS Interfaces
+.INDENT 0.0
+.TP
+.B \fIgmx\-bundle(1)\fP
+Analyze bundles of axes, e.g., helices
+.TP
+.B \fIgmx\-density(1)\fP
+Calculate the density of the system
+.TP
+.B \fIgmx\-densmap(1)\fP
+Calculate 2D planar or axial\-radial density maps
+.TP
+.B \fIgmx\-densorder(1)\fP
+Calculate surface fluctuations
+.TP
+.B \fIgmx\-h2order(1)\fP
+Compute the orientation of water molecules
+.TP
+.B \fIgmx\-hydorder(1)\fP
+Compute tetrahedrality parameters around a given atom
+.TP
+.B \fIgmx\-order(1)\fP
+Compute the order parameter per atom for carbon tails
+.TP
+.B \fIgmx\-potential(1)\fP
+Calculate the electrostatic potential across the box
+.UNINDENT
+.SS Covariance analysis
+.INDENT 0.0
+.TP
+.B \fIgmx\-anaeig(1)\fP
+Analyze the eigenvectors
+.TP
+.B \fIgmx\-covar(1)\fP
+Calculate and diagonalize the covariance matrix
+.TP
+.B \fIgmx\-make_edi(1)\fP
+Generate input files for essential dynamics sampling
+.UNINDENT
+.SS Normal modes
+.INDENT 0.0
+.TP
+.B \fIgmx\-anaeig(1)\fP
+Analyze the normal modes
+.TP
+.B \fIgmx\-nmeig(1)\fP
+Diagonalize the Hessian for normal mode analysis
+.TP
+.B \fIgmx\-nmtraj(1)\fP
+Generate a virtual oscillating trajectory from an eigenvector
+.TP
+.B \fIgmx\-nmens(1)\fP
+Generate an ensemble of structures from the normal modes
+.TP
+.B \fIgmx\-grompp(1)\fP
+Make a run input file
+.TP
+.B \fIgmx\-mdrun(1)\fP
+Find a potential energy minimum and calculate the Hessian
+.UNINDENT
+.SH COPYRIGHT
+2015, GROMACS development team
+.\" Generated by docutils manpage writer.
+.
